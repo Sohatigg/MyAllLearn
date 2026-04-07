@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой дневник</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <h1>📔 Личный дневник</h1>
+
+    <!-- Форма входа/регистрации -->
+    <div id="authSection">
+        <h2>Вход в дневник</h2>
+        <input type="text" id="loginUsername" placeholder="Логин">
+        <input type="password" id="loginPassword" placeholder="Пароль">
+        <button onclick="login()">Войти</button>
+        <button onclick="showRegister()">Регистрация</button>
+    </div>
+
+    <!-- Форма регистрации (скрыта изначально) -->
+    <div id="registerSection" style="display: none;">
+        <h2>Регистрация</h2>
+        <input type="text" id="regUsername" placeholder="Логин">
+        <input type="password" id="regPassword" placeholder="Пароль">
+        <button onclick="register()">Зарегистрироваться</button>
+        <button onclick="showLogin()">Назад</button>
+    </div>
+
+    <!-- Основная часть дневника (скрыта, пока не вошли) -->
+    <div id="diarySection" style="display: none;">
+        <h2>Добро пожаловать, <span id="currentUser"></span>!</h2>
+
+        <div class="entry-form">
+            <h3>Новая запись</h3>
+            <input type="text" id="entryTitle" placeholder="Заголовок">
+            <textarea id="entryContent" placeholder="Что у вас произошло?" rows="4"></textarea>
+            <button onclick="addEntry()">Сохранить</button>
+        </div>
+
+        <div class="entries-list">
+            <h3>Мои записи</h3>
+            <div id="entries"></div>
+        </div>
+
+        <button onclick="logout()" class="logout-btn">Выйти</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
